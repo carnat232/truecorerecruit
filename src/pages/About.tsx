@@ -1,7 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { CheckCircle2 } from "lucide-react";
-import about from "@/assets/about.jpg";
+const about = "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1280&q=80";
 
 const points = [
   "Industry expertise across global sectors",
