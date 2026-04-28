@@ -1,16 +1,30 @@
 import { Layout } from "@/components/Layout";
 import { Hero } from "@/components/sections/Hero";
-import { DualCTA } from "@/components/sections/DualCTA";
 import { WhyChoose } from "@/components/sections/WhyChoose";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import {
+  AboutPreview,
+  EmployersPreview,
+  CandidatesPreview,
+  ProcessPreview,
+  TeamPreview,
+  TestimonialsPreview,
+  FAQPreview,
+  ContactPreview,
+} from "@/components/sections/PreviewSections";
 
 const Index = () => (
   <Layout>
     <Hero />
-    <DualCTA />
+    <AboutPreview />
     <WhyChoose />
-    <Testimonials />
+    <EmployersPreview />
+    <CandidatesPreview />
+    <ProcessPreview />
+    <TeamPreview />
+    <TestimonialsPreview />
+    <FAQPreview />
+    <ContactPreview />
     <FinalCTA />
   </Layout>
 );
