@@ -11,9 +11,9 @@ export const Hero = () => (
         <img
           src={logo}
           alt="TrueCoreRecruit"
-          className="h-20 md:h-24 w-auto"
-          width={240}
-          height={96}
+          className="h-56 md:h-72 lg:h-80 w-auto"
+          width={480}
+          height={480}
         />
       </div>
 
