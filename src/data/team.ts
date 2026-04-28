@@ -6,6 +6,8 @@ import linda from "@/assets/team/linda.jpeg";
 import sami from "@/assets/team/sami.jpeg";
 import loren from "@/assets/team/loren.jpeg";
 import kristy from "@/assets/team/kristy.jpeg";
+import candice from "@/assets/team/candice.jpeg";
+import berta from "@/assets/team/berta.jpeg";
 
 export interface TeamMember {
   name: string;
@@ -62,5 +64,17 @@ export const team: TeamMember[] = [
     role: "Candidate Success Manager",
     bio: "Ensures a smooth recruitment experience and supports candidates throughout their career journey.",
     image: kristy,
+  },
+  {
+    name: "Candice Puente Moss",
+    role: "Lead Talent Advisor",
+    bio: "Expert in strategic hiring, workforce planning, and building long-term employer partnerships.",
+    image: candice,
+  },
+  {
+    name: "Berta Meyer",
+    role: "HR & Talent Specialist",
+    bio: "Experienced in candidate evaluation, HR support, and recruitment coordination.",
+    image: berta,
   },
 ];
