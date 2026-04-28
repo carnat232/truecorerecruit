@@ -7,7 +7,7 @@ export const Hero = () => (
   <section className="relative bg-primary text-primary-foreground overflow-hidden">
     {/* Background image */}
     <div
-      className="absolute inset-0 bg-cover bg-center pointer-events-none"
+      className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
       style={{ backgroundImage: `url(${heroBg})` }}
       aria-hidden
     />
@@ -23,18 +23,18 @@ export const Hero = () => (
       }}
     />
 
-    <div className="container-pro relative py-28 md:py-36 lg:py-44 text-center">
+    <div className="container-pro relative py-20 sm:py-28 md:py-36 lg:py-44 text-center">
       <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent-glow text-xs font-semibold tracking-[0.18em] uppercase mb-8 animate-fade-in">
         <Sparkles className="h-3.5 w-3.5" />
         Worldwide Talent. Local Expertise.
       </div>
 
-      <h1 className="heading-xl mb-7 animate-fade-up delay-100 max-w-5xl mx-auto">
+      <h1 className="heading-xl mb-6 sm:mb-7 animate-fade-up delay-100 max-w-5xl mx-auto px-2">
         Connecting Talent and Opportunity{" "}
         <span className="text-gradient-gold">Across Borders</span>
       </h1>
 
-      <p className="text-lg md:text-xl text-primary-foreground/85 max-w-3xl mx-auto mb-6 animate-fade-up delay-200 leading-relaxed">
+      <p className="text-base sm:text-lg md:text-xl text-primary-foreground/85 max-w-3xl mx-auto mb-6 animate-fade-up delay-200 leading-relaxed px-2">
         TrueCoreRecruit is a global recruitment partner pairing ambitious organisations with
         outstanding professionals in every corner of the world. We turn international hiring into
         a seamless, strategic advantage.
