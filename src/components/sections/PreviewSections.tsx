@@ -3,40 +3,31 @@ import { ArrowRight, CheckCircle2, Briefcase, UserCheck, Quote, HelpCircle, Mail
 import { Button } from "@/components/ui/button";
 import { team } from "@/data/team";
 
-const ABOUT_IMG = "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1280&q=80";
-const EMPLOYERS_IMG = "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1280&q=80";
-const CANDIDATES_IMG = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1280&q=80";
-
 /* ============ ABOUT PREVIEW ============ */
 export const AboutPreview = () => (
   <section className="section-pro">
-    <div className="container-pro grid lg:grid-cols-2 gap-14 items-center">
-      <div className="rounded-3xl overflow-hidden shadow-elegant order-2 lg:order-1">
-        <img src={ABOUT_IMG} alt="TrueCoreRecruit team collaborating" loading="lazy" className="w-full h-full object-cover aspect-[4/3]" />
-      </div>
-      <div className="order-1 lg:order-2">
-        <p className="eyebrow mb-4">About Us</p>
-        <h2 className="heading-lg mb-5">People-first. <span className="text-gradient-gold">Outcomes-driven.</span></h2>
-        <p className="text-muted-foreground text-lg leading-relaxed mb-7">
-          TrueCoreRecruit blends deep industry expertise with structured, ethical recruitment — delivering
-          precise matches and long-term placement success for employers and candidates alike.
-        </p>
-        <ul className="space-y-3 mb-8">
-          {[
-            "Industry expertise across global sectors",
-            "Structured, transparent recruitment processes",
-            "A people-first, ethics-first mindset",
-          ].map((p) => (
-            <li key={p} className="flex items-start gap-3">
-              <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-              <span className="text-foreground/85">{p}</span>
-            </li>
-          ))}
-        </ul>
-        <Button asChild variant="navy">
-          <Link to="/about">Learn More <ArrowRight className="h-4 w-4" /></Link>
-        </Button>
-      </div>
+    <div className="container-pro max-w-4xl text-center">
+      <p className="eyebrow mb-4 justify-center">About Us</p>
+      <h2 className="heading-lg mb-6">People-first. <span className="text-gradient-gold">Outcomes-driven.</span></h2>
+      <p className="text-muted-foreground text-lg leading-relaxed mb-10 max-w-3xl mx-auto">
+        TrueCoreRecruit blends deep industry expertise with structured, ethical recruitment — delivering
+        precise matches and long-term placement success for employers and candidates alike.
+      </p>
+      <ul className="grid sm:grid-cols-3 gap-4 mb-10 text-left">
+        {[
+          "Industry expertise across global sectors",
+          "Structured, transparent recruitment processes",
+          "A people-first, ethics-first mindset",
+        ].map((p) => (
+          <li key={p} className="flex items-start gap-3 p-5 rounded-xl border border-border bg-card">
+            <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+            <span className="text-foreground/85 text-sm">{p}</span>
+          </li>
+        ))}
+      </ul>
+      <Button asChild variant="navy">
+        <Link to="/about">Learn More <ArrowRight className="h-4 w-4" /></Link>
+      </Button>
     </div>
   </section>
 );
@@ -44,27 +35,26 @@ export const AboutPreview = () => (
 /* ============ EMPLOYERS PREVIEW ============ */
 export const EmployersPreview = () => (
   <section className="section-pro bg-muted/40">
-    <div className="container-pro grid lg:grid-cols-2 gap-14 items-center">
-      <div>
-        <p className="eyebrow mb-4">For Employers</p>
+    <div className="container-pro max-w-5xl">
+      <div className="text-center mb-12">
+        <p className="eyebrow mb-4 justify-center">For Employers</p>
         <h2 className="heading-lg mb-5">Hire with precision. Hire with confidence.</h2>
-        <p className="text-muted-foreground text-lg leading-relaxed mb-7">
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
           Industry-specialist recruiters, structured processes and a global reach — built around your hiring goals.
         </p>
-        <div className="grid sm:grid-cols-2 gap-4 mb-8">
-          {["Permanent Recruitment", "Executive Search", "Contract Staffing", "International Hiring"].map((s) => (
-            <div key={s} className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border">
-              <Briefcase className="h-5 w-5 text-accent shrink-0" />
-              <span className="text-sm font-medium">{s}</span>
-            </div>
-          ))}
-        </div>
+      </div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        {["Permanent Recruitment", "Executive Search", "Contract Staffing", "International Hiring"].map((s) => (
+          <div key={s} className="flex items-center gap-3 p-5 rounded-xl bg-card border border-border">
+            <Briefcase className="h-5 w-5 text-accent shrink-0" />
+            <span className="text-sm font-medium">{s}</span>
+          </div>
+        ))}
+      </div>
+      <div className="text-center">
         <Button asChild variant="navy">
           <Link to="/employers">View Employer Services <ArrowRight className="h-4 w-4" /></Link>
         </Button>
-      </div>
-      <div className="rounded-3xl overflow-hidden shadow-elegant">
-        <img src={EMPLOYERS_IMG} alt="Employers meeting" loading="lazy" className="w-full h-full object-cover aspect-[4/3]" />
       </div>
     </div>
   </section>
@@ -73,32 +63,29 @@ export const EmployersPreview = () => (
 /* ============ CANDIDATES PREVIEW ============ */
 export const CandidatesPreview = () => (
   <section className="section-pro">
-    <div className="container-pro grid lg:grid-cols-2 gap-14 items-center">
-      <div className="rounded-3xl overflow-hidden shadow-elegant order-2 lg:order-1">
-        <img src={CANDIDATES_IMG} alt="Professional candidate interview" loading="lazy" className="w-full h-full object-cover aspect-[4/3]" />
-      </div>
-      <div className="order-1 lg:order-2">
-        <p className="eyebrow mb-4">For Candidates</p>
+    <div className="container-pro max-w-5xl">
+      <div className="text-center mb-12">
+        <p className="eyebrow mb-4 justify-center">For Candidates</p>
         <h2 className="heading-lg mb-5">Build the career you actually <span className="text-gradient-gold">want</span>.</h2>
-        <p className="text-muted-foreground text-lg leading-relaxed mb-7">
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
           Confidential job search, expert support and direct access to global employers — at no cost to you.
         </p>
-        <div className="grid sm:grid-cols-2 gap-4 mb-8">
-          {["Job Matching", "CV Optimization", "Interview Coaching", "Career Guidance"].map((s) => (
-            <div key={s} className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border">
-              <UserCheck className="h-5 w-5 text-accent shrink-0" />
-              <span className="text-sm font-medium">{s}</span>
-            </div>
-          ))}
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <Button asChild variant="navy">
-            <Link to="/candidates">View Candidate Services <ArrowRight className="h-4 w-4" /></Link>
-          </Button>
-          <Button asChild variant="outline">
-            <Link to="/upload-cv">Upload CV</Link>
-          </Button>
-        </div>
+      </div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        {["Job Matching", "CV Optimization", "Interview Coaching", "Career Guidance"].map((s) => (
+          <div key={s} className="flex items-center gap-3 p-5 rounded-xl bg-card border border-border">
+            <UserCheck className="h-5 w-5 text-accent shrink-0" />
+            <span className="text-sm font-medium">{s}</span>
+          </div>
+        ))}
+      </div>
+      <div className="flex flex-wrap gap-3 justify-center">
+        <Button asChild variant="navy">
+          <Link to="/candidates">View Candidate Services <ArrowRight className="h-4 w-4" /></Link>
+        </Button>
+        <Button asChild variant="outline">
+          <Link to="/upload-cv">Upload CV</Link>
+        </Button>
       </div>
     </div>
   </section>
@@ -116,14 +103,14 @@ export const ProcessPreview = () => {
     <section className="section-pro bg-muted/40">
       <div className="container-pro">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="eyebrow mb-4">Our Process</p>
+          <p className="eyebrow mb-4 justify-center">Our Process</p>
           <h2 className="heading-lg mb-5">A structured path to better hires</h2>
           <p className="text-muted-foreground text-lg">Clear milestones, predictable timelines, measurable outcomes.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {steps.map((s) => (
-            <div key={s.n} className="p-7 rounded-2xl bg-card border border-border hover:border-accent/40 hover:shadow-elegant transition-smooth">
-              <div className="font-display text-3xl font-semibold text-accent mb-3">{s.n}</div>
+            <div key={s.n} className="p-7 rounded-2xl bg-card border border-border hover:border-accent/40 hover:shadow-soft transition-smooth">
+              <div className="font-display text-3xl font-bold text-accent mb-3">{s.n}</div>
               <h3 className="font-display text-lg font-semibold text-primary mb-2">{s.t}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{s.d}</p>
             </div>
@@ -146,25 +133,25 @@ export const TeamPreview = () => {
     <section className="section-pro">
       <div className="container-pro">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="eyebrow mb-4">Our Team</p>
+          <p className="eyebrow mb-4 justify-center">Our Team</p>
           <h2 className="heading-lg mb-5">Senior recruiters who know your sector</h2>
           <p className="text-muted-foreground text-lg">A senior team of consultants delivering trusted recruitment outcomes worldwide.</p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7 mb-12 justify-items-center">
           {preview.map((m) => (
             <article
               key={m.name}
-              className="group rounded-2xl bg-card border border-border overflow-hidden hover:shadow-elegant hover:-translate-y-1 hover:border-accent/40 transition-smooth"
+              className="w-full max-w-[320px] bg-card border border-border rounded-2xl shadow-soft hover:shadow-card transition-smooth flex flex-col p-5"
             >
-              <div className="aspect-square overflow-hidden bg-muted">
+              <div className="aspect-square w-full overflow-hidden rounded-xl bg-muted mb-4">
                 <img
                   src={m.image}
                   alt={`${m.name} — ${m.role}`}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-5 text-center">
+              <div className="text-center px-1">
                 <h3 className="font-display text-base font-semibold text-primary">{m.name}</h3>
                 <p className="text-accent text-sm font-medium">{m.role}</p>
               </div>
@@ -193,7 +180,7 @@ export const FAQPreview = () => {
     <section className="section-pro bg-muted/40">
       <div className="container-pro max-w-4xl">
         <div className="text-center mb-14">
-          <p className="eyebrow mb-4">FAQ</p>
+          <p className="eyebrow mb-4 justify-center">FAQ</p>
           <h2 className="heading-lg mb-5">Frequently asked questions</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-5 mb-12">
@@ -222,7 +209,7 @@ export const ContactPreview = () => (
   <section className="section-pro">
     <div className="container-pro">
       <div className="text-center max-w-2xl mx-auto mb-14">
-        <p className="eyebrow mb-4">Contact</p>
+        <p className="eyebrow mb-4 justify-center">Contact</p>
         <h2 className="heading-lg mb-5">Speak with a recruitment specialist</h2>
         <p className="text-muted-foreground text-lg">Whether you're hiring or job-hunting, we typically respond within one business day.</p>
       </div>
@@ -232,7 +219,7 @@ export const ContactPreview = () => (
           { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
           { icon: MapPin, label: "Reach", value: "Global · Remote-First" },
         ].map((c) => (
-          <div key={c.label} className="p-6 rounded-2xl bg-card border border-border text-center hover:border-accent/40 hover:shadow-elegant transition-smooth">
+          <div key={c.label} className="p-6 rounded-2xl bg-card border border-border text-center hover:border-accent/40 hover:shadow-soft transition-smooth">
             <div className="h-12 w-12 mx-auto rounded-xl bg-gradient-gold grid place-items-center shadow-gold mb-4">
               <c.icon className="h-5 w-5 text-accent-foreground" />
             </div>
@@ -250,25 +237,24 @@ export const ContactPreview = () => (
   </section>
 );
 
-/* ============ TESTIMONIALS PREVIEW (compact) ============ */
+/* ============ TESTIMONIALS PREVIEW ============ */
 export const TestimonialsPreview = () => {
   const items = [
     { quote: "TrueCoreRecruit delivered high-quality candidates efficiently. A truly professional recruitment partner.", author: "Director of Talent", role: "Global FinTech Employer" },
     { quote: "They helped me secure the right role with excellent support and complete confidentiality throughout.", author: "Senior Engineering Lead", role: "Placed Candidate" },
   ];
   return (
-    <section className="section-pro bg-primary text-primary-foreground relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 80% 20%, hsl(38 55% 55% / 0.5), transparent 50%)" }} />
-      <div className="container-pro relative">
+    <section className="section-pro bg-primary text-primary-foreground">
+      <div className="container-pro">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="eyebrow text-accent-glow mb-4">Testimonials</p>
+          <p className="eyebrow text-accent-glow mb-4 justify-center">Testimonials</p>
           <h2 className="heading-lg">Trusted by employers and professionals</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {items.map((t) => (
-            <div key={t.author} className="bg-primary-foreground/5 backdrop-blur border border-primary-foreground/10 rounded-2xl p-8 hover:border-accent/40 transition-smooth">
+            <div key={t.author} className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl p-8 hover:border-accent/40 transition-smooth">
               <Quote className="h-9 w-9 text-accent mb-5" />
-              <p className="text-lg leading-relaxed mb-6 text-primary-foreground/95 font-display italic">"{t.quote}"</p>
+              <p className="text-lg leading-relaxed mb-6 text-primary-foreground/95">"{t.quote}"</p>
               <div className="border-t border-primary-foreground/10 pt-4">
                 <p className="font-semibold">{t.author}</p>
                 <p className="text-sm text-primary-foreground/60">{t.role}</p>
