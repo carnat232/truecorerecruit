@@ -237,12 +237,31 @@ export const ContactPreview = () => (
   </section>
 );
 
-/* ============ TESTIMONIALS PREVIEW ============ */
+/* ============ TESTIMONIALS PREVIEW (carousel) ============ */
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
+
 export const TestimonialsPreview = () => {
   const items = [
-    { quote: "TrueCoreRecruit delivered high-quality candidates efficiently. A truly professional recruitment partner.", author: "Director of Talent", role: "Global FinTech Employer" },
-    { quote: "They helped me secure the right role with excellent support and complete confidentiality throughout.", author: "Senior Engineering Lead", role: "Placed Candidate" },
+    { quote: "TrueCoreRecruit delivered high-quality candidates efficiently. A truly professional recruitment partner who understood our culture from day one.", author: "Director of Talent", role: "Global FinTech Employer" },
+    { quote: "They helped me secure the right role with excellent support and complete confidentiality throughout the entire process.", author: "Senior Engineering Lead", role: "Placed Candidate" },
+    { quote: "Their structured process and senior consultants made hiring across three regions feel effortless. Outstanding partner.", author: "Head of People", role: "International SaaS Scale-up" },
+    { quote: "The shortlist quality was exceptional — every candidate was carefully matched to our brief. We hired within four weeks.", author: "Chief Operating Officer", role: "Healthcare Group" },
+    { quote: "Confidential, professional and genuinely consultative. They guided my career move with real expertise and care.", author: "VP of Product", role: "Placed Executive" },
+    { quote: "A recruitment partner that truly listens. Long-term thinking, no shortcuts — exactly what executive hiring should be.", author: "Managing Director", role: "Professional Services Firm" },
   ];
+
+  const [api, setApi] = useState<CarouselApi>();
+
+  useEffect(() => {
+    if (!api) return;
+    const interval = setInterval(() => {
+      if (api.canScrollNext()) api.scrollNext();
+      else api.scrollTo(0);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [api]);
+
   return (
     <section className="section-pro bg-primary text-primary-foreground">
       <div className="container-pro">
@@ -250,18 +269,28 @@ export const TestimonialsPreview = () => {
           <p className="eyebrow text-accent-glow mb-4 justify-center">Testimonials</p>
           <h2 className="heading-lg">Trusted by employers and professionals</h2>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
-          {items.map((t) => (
-            <div key={t.author} className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl p-8 hover:border-accent/40 transition-smooth">
-              <Quote className="h-9 w-9 text-accent mb-5" />
-              <p className="text-lg leading-relaxed mb-6 text-primary-foreground/95">"{t.quote}"</p>
-              <div className="border-t border-primary-foreground/10 pt-4">
-                <p className="font-semibold">{t.author}</p>
-                <p className="text-sm text-primary-foreground/60">{t.role}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Carousel
+          setApi={setApi}
+          opts={{ align: "start", loop: true }}
+          className="max-w-6xl mx-auto px-4 md:px-12"
+        >
+          <CarouselContent>
+            {items.map((t) => (
+              <CarouselItem key={t.author} className="md:basis-1/2 lg:basis-1/2">
+                <div className="h-full bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl p-8 hover:border-accent/40 transition-smooth flex flex-col">
+                  <Quote className="h-9 w-9 text-accent mb-5" />
+                  <p className="text-lg leading-relaxed mb-6 text-primary-foreground/95 flex-1">"{t.quote}"</p>
+                  <div className="border-t border-primary-foreground/10 pt-4">
+                    <p className="font-semibold">{t.author}</p>
+                    <p className="text-sm text-primary-foreground/60">{t.role}</p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent" />
+          <CarouselNext className="hidden md:flex bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent" />
+        </Carousel>
       </div>
     </section>
   );
