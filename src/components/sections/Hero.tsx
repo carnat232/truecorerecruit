@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Globe, Users, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/hero-logo.png";
 
 export const Hero = () => (
   <section className="relative bg-gradient-hero text-primary-foreground">
