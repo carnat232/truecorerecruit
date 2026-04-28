@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Briefcase, UserCheck, Quote, HelpCircle, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { team } from "@/data/team";
 
 const ABOUT_IMG = "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1280&q=80";
 const EMPLOYERS_IMG = "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1280&q=80";
@@ -140,33 +141,39 @@ export const ProcessPreview = () => {
 
 /* ============ TEAM PREVIEW ============ */
 export const TeamPreview = () => {
-  const team = [
-    { name: "Michael Grant", role: "Managing Director", initials: "MG" },
-    { name: "Olivia Bennett", role: "Head of Talent Solutions", initials: "OB" },
-    { name: "Samuel Adeyemi", role: "Senior Consultant", initials: "SA" },
-    { name: "Laura Chen", role: "Success Manager", initials: "LC" },
-  ];
+  const preview = team.slice(0, 4);
   return (
     <section className="section-pro">
       <div className="container-pro">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="eyebrow mb-4">Our Team</p>
           <h2 className="heading-lg mb-5">Senior recruiters who know your sector</h2>
+          <p className="text-muted-foreground text-lg">A senior team of consultants delivering trusted recruitment outcomes worldwide.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {team.map((m) => (
-            <div key={m.name} className="rounded-2xl bg-card border border-border p-7 text-center hover:shadow-elegant hover:-translate-y-1 hover:border-accent/40 transition-smooth">
-              <div className="mx-auto h-20 w-20 rounded-full bg-gradient-hero text-primary-foreground grid place-items-center mb-4 font-display text-xl font-semibold shadow-elegant">
-                {m.initials}
+          {preview.map((m) => (
+            <article
+              key={m.name}
+              className="group rounded-2xl bg-card border border-border overflow-hidden hover:shadow-elegant hover:-translate-y-1 hover:border-accent/40 transition-smooth"
+            >
+              <div className="aspect-square overflow-hidden bg-muted">
+                <img
+                  src={m.image}
+                  alt={`${m.name} — ${m.role}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                />
               </div>
-              <h3 className="font-display text-base font-semibold text-primary">{m.name}</h3>
-              <p className="text-accent text-sm font-medium">{m.role}</p>
-            </div>
+              <div className="p-5 text-center">
+                <h3 className="font-display text-base font-semibold text-primary">{m.name}</h3>
+                <p className="text-accent text-sm font-medium">{m.role}</p>
+              </div>
+            </article>
           ))}
         </div>
         <div className="text-center">
           <Button asChild variant="navy">
-            <Link to="/team">Meet the Team <ArrowRight className="h-4 w-4" /></Link>
+            <Link to="/team">Meet the Full Team <ArrowRight className="h-4 w-4" /></Link>
           </Button>
         </div>
       </div>
