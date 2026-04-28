@@ -6,12 +6,8 @@ export const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
     <div className="container-pro py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
       <div>
-        <div className="mb-5 flex items-center gap-3">
-          <img src={logo} alt="TrueCoreRecruit logo" className="h-12 w-auto" />
-          <div>
-            <span className="font-display text-xl font-semibold">TrueCoreRecruit</span>
-            <p className="text-[10px] tracking-[0.2em] uppercase text-primary-foreground/50 mt-1">Connecting Talent Globally</p>
-          </div>
+        <div className="mb-5 bg-white rounded-lg p-3 inline-block">
+          <img src={logo} alt="TrueCoreRecruit logo" className="h-20 w-auto" />
         </div>
         <p className="text-primary-foreground/70 text-sm leading-relaxed mb-5">
           A global recruitment agency delivering confidential, precise and results-driven hiring solutions.
