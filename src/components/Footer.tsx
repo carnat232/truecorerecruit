@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
-import logo from "@/assets/logo.png";
 
 export const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
     <div className="container-pro py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
       <div>
-        <div className="flex items-center gap-3 mb-5">
-          <img src={logo} alt="TrueCoreRecruit" className="h-12 w-12 object-contain bg-background/95 rounded-lg p-1" />
+        <div className="mb-5">
           <span className="font-display text-xl font-semibold">TrueCoreRecruit</span>
+          <p className="text-[10px] tracking-[0.2em] uppercase text-primary-foreground/50 mt-1">Connecting Talent Globally</p>
         </div>
         <p className="text-primary-foreground/70 text-sm leading-relaxed mb-5">
           A global recruitment agency delivering confidential, precise and results-driven hiring solutions.

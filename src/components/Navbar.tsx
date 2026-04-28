@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -38,11 +37,10 @@ export const Navbar = () => {
       }`}
     >
       <div className="container-pro flex items-center justify-between h-20">
-        <Link to="/" className="flex items-center gap-3 shrink-0">
-          <img src={logo} alt="TrueCoreRecruit" className="h-12 w-12 object-contain" />
-          <div className="hidden sm:flex flex-col leading-none">
-            <span className="font-display text-lg font-semibold text-primary">TrueCoreRecruit</span>
-            <span className="text-[10px] tracking-[0.18em] uppercase text-muted-foreground">Connecting Talent</span>
+        <Link to="/" className="flex items-center shrink-0">
+          <div className="flex flex-col leading-none">
+            <span className="font-display text-xl font-semibold text-primary">TrueCoreRecruit</span>
+            <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-1">Connecting Talent Globally</span>
           </div>
         </Link>
 
