@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Briefcase, UserCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import employers from "@/assets/employers.jpg";
-import candidates from "@/assets/candidates.jpg";
+const employers = "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1280&q=80";
+const candidates = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1280&q=80";
 
 export const DualCTA = () => (
   <section className="section-pro bg-muted/40">
