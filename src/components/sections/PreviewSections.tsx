@@ -126,9 +126,8 @@ export const ProcessPreview = () => {
   );
 };
 
-/* ============ TEAM PREVIEW ============ */
+/* ============ TEAM PREVIEW (full team) ============ */
 export const TeamPreview = () => {
-  const preview = team.slice(0, 4);
   return (
     <section className="section-pro">
       <div className="container-pro">
@@ -137,13 +136,13 @@ export const TeamPreview = () => {
           <h2 className="heading-lg mb-5">Senior recruiters who know your sector</h2>
           <p className="text-muted-foreground text-lg">A senior team of consultants delivering trusted recruitment outcomes worldwide.</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7 mb-12 justify-items-center">
-          {preview.map((m) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-7 mb-12 justify-items-center">
+          {team.map((m) => (
             <article
               key={m.name}
               className="w-full max-w-[320px] bg-card border border-border rounded-2xl shadow-soft hover:shadow-card transition-smooth flex flex-col p-5"
             >
-              <div className="aspect-square w-full overflow-hidden rounded-xl bg-muted mb-4">
+              <div className="aspect-square w-full overflow-hidden rounded-xl bg-muted mb-5">
                 <img
                   src={m.image}
                   alt={`${m.name} — ${m.role}`}
@@ -151,16 +150,17 @@ export const TeamPreview = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="text-center px-1">
+              <div className="text-center flex-1 flex flex-col px-1">
                 <h3 className="font-display text-base font-semibold text-primary">{m.name}</h3>
-                <p className="text-accent text-sm font-medium">{m.role}</p>
+                <p className="text-accent text-sm font-medium mb-3">{m.role}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">{m.bio}</p>
               </div>
             </article>
           ))}
         </div>
         <div className="text-center">
           <Button asChild variant="navy">
-            <Link to="/team">Meet the Full Team <ArrowRight className="h-4 w-4" /></Link>
+            <Link to="/team">Visit the Team Page <ArrowRight className="h-4 w-4" /></Link>
           </Button>
         </div>
       </div>
