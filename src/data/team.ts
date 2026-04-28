@@ -60,22 +60,10 @@ export const team: TeamMember[] = [
     image: taylor,
   },
   {
-    name: "Courtney Patterson",
-    role: "Senior HR & Recruitment Consultant",
-    bio: "Skilled in full-cycle recruitment, candidate lifecycle management, and talent development strategies.",
-    image: courtney,
-  },
-  {
     name: "Linda Chase",
     role: "Client Relationship Manager",
     bio: "Manages employer partnerships and ensures high-quality recruitment delivery and client satisfaction.",
     image: linda,
-  },
-  {
-    name: "Sami Weyhrauch",
-    role: "Talent Sourcing Specialist",
-    bio: "Expert in identifying, attracting, and engaging top talent across multiple industries.",
-    image: sami,
   },
   {
     name: "Loren McCowan",
@@ -88,17 +76,5 @@ export const team: TeamMember[] = [
     role: "Candidate Success Manager",
     bio: "Ensures a smooth recruitment experience and supports candidates throughout their career journey.",
     image: kristy,
-  },
-  {
-    name: "Candice Puente Moss",
-    role: "Lead Talent Advisor",
-    bio: "Expert in strategic hiring, workforce planning, and building long-term employer partnerships.",
-    image: candice,
-  },
-  {
-    name: "Berta Meyer",
-    role: "HR & Talent Specialist",
-    bio: "Experienced in candidate evaluation, HR support, and recruitment coordination.",
-    image: berta,
   },
 ];
