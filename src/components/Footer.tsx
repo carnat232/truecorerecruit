@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Phone, Linkedin, Twitter } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 export const Footer = () => (
@@ -13,14 +13,6 @@ export const Footer = () => (
         <p className="text-primary-foreground/70 text-sm leading-relaxed mb-5">
           A global recruitment agency delivering confidential, precise and results-driven hiring solutions.
         </p>
-        <div className="flex gap-3">
-          <a href="#" aria-label="LinkedIn" className="h-9 w-9 rounded-full border border-primary-foreground/20 grid place-items-center hover:bg-accent hover:text-accent-foreground hover:border-accent transition-smooth">
-            <Linkedin className="h-4 w-4" />
-          </a>
-          <a href="#" aria-label="Twitter" className="h-9 w-9 rounded-full border border-primary-foreground/20 grid place-items-center hover:bg-accent hover:text-accent-foreground hover:border-accent transition-smooth">
-            <Twitter className="h-4 w-4" />
-          </a>
-        </div>
       </div>
 
       <div>
