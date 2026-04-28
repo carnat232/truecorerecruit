@@ -38,12 +38,8 @@ export const Navbar = () => {
       }`}
     >
       <div className="container-pro flex items-center justify-between h-20">
-        <Link to="/" className="flex items-center gap-3 shrink-0">
-          <img src={logo} alt="TrueCoreRecruit logo" className="h-12 w-auto" />
-          <div className="flex flex-col leading-none">
-            <span className="font-display text-xl font-semibold text-primary">TrueCoreRecruit</span>
-            <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-1">Connecting Talent Globally</span>
-          </div>
+        <Link to="/" className="flex items-center shrink-0">
+          <img src={logo} alt="TrueCoreRecruit logo" className="h-14 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
