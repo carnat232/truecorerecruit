@@ -46,7 +46,7 @@ export const Footer = () => (
 
     <div className="border-t border-primary-foreground/10">
       <div className="container-pro py-6 flex flex-col md:flex-row gap-4 justify-between items-center text-xs text-primary-foreground/60">
-        <p>© {new Date().getFullYear()} TrueCoreRecruit. All rights reserved.</p>
+        <p>© 2020 TrueCoreRecruit. All rights reserved.</p>
         <div className="flex gap-6">
           <Link to="/legal/privacy" className="hover:text-accent transition-smooth">Privacy Policy</Link>
           <Link to="/legal/terms" className="hover:text-accent transition-smooth">Terms of Service</Link>
